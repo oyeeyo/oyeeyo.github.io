@@ -5,9 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Hexo">
-    <meta name="description" content="title: java学习笔记1date: 2023-04-20 13:20:36tags:
-一.初识Java:  1.Java语言相比较C，C++更简单，减少了很多难理解的东西如：指针deng
- 2.Java语言是面向对象的，且跨平台，多">
+    <meta name="description" content="面向对象1.面向对象的简介1.面向对象是什么呢?先用标准的语言的解释一下:面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。是不是是感觉很繁琐?其实简而言之就是拿东">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -377,7 +375,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-04-20
+                    2023-05-06
                 </div>
                 
 
@@ -398,15 +396,28 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>title: java学习笔记1<br>date: 2023-04-20 13:20:36<br>tags:</p>
-<h2 id="一-初识Java"><a href="#一-初识Java" class="headerlink" title="一.初识Java:"></a>一.初识Java:</h2><p>  1.Java语言相比较C，C++更简单，减少了很多难理解的东西如：指针deng</p>
-<p> 2.Java语言是面向对象的，且跨平台，多线程，安全性高，简单易用</p>
-<p> 3.Java的适用面很广泛，无论做前端，后端，桌面应用开发还是android移动应用开发等都能得到使用</p>
-<p> 4…….</p>
-<p>总之，Java语言具有其得天独厚的优势，在近十年内长期处于语言使用率的较高的地位。</p>
-<p>第一个Java小程序当然从”helloworld”开始了。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="comment">//定义的类,创建了一个名为class的类</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//定义的一个方法</span></span><br><span class="line">        System.out.printf(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h3 id="1-面向对象的简介"><a href="#1-面向对象的简介" class="headerlink" title="1.面向对象的简介"></a>1.面向对象的简介</h3><p>1.面向对象是什么呢?先用标准的语言的解释一下:面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。是不是是感觉很繁琐?其实简而言之就是拿东西过来做对应的事情,是不是一下就感觉简洁多了?w(ﾟДﾟ)w</p>
+<p>​		其实当你学到这里的时候，你就已经接触过很多面向对象的东西了.举个例子:在JAVA中获得随机数的Random，打印输出的System，键盘录入的Scanner等,这种拿东西来做事情的过程就是面向对象.接下来我会一一来介绍面向对象中的一些重要的基础概念.</p>
+<h3 id="2-类和对象"><a href="#2-类和对象" class="headerlink" title="2.类和对象"></a>2.类和对象</h3><p>1.首先你要知道什么是类和对象。类就是共同特征的描述,就好比一张设计图,你首先定义了一个类(设计图),接下来才能拿来运用创建对象；而对象则是真实存在的东西，就好比拿工具来制造出的东西一样。下面我来展示一段伪代码:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//public class 类名 &#123;</span></span><br><span class="line"><span class="comment">//    1.成员变量（代表属性）</span></span><br><span class="line"><span class="comment">//    2.成员方法（代表行为）</span></span><br><span class="line"><span class="comment">//    3.构造器</span></span><br><span class="line"><span class="comment">//    4.代码块</span></span><br><span class="line"><span class="comment">//    5.内部类</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"><span class="comment">//接下来我们将主要展示1,2两个模块，至于3,4,5我们将会在后面的学习中进行讲解。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> 类和对象;    <span class="comment">//装在同一个软件包中才能进行调用</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Phone</span> &#123;</span><br><span class="line">    <span class="comment">//定义了一个类</span></span><br><span class="line">    <span class="comment">//属性</span></span><br><span class="line">    String brand;</span><br><span class="line">    <span class="type">double</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//行为</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">call</span><span class="params">()</span>&#123;System.out.println(<span class="string">&quot;手机在打电话&quot;</span>);&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">playgame</span><span class="params">()</span>&#123;System.out.println(<span class="string">&quot;手机在打游戏&quot;</span>);&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Pass:其实我认为Java中的类与C语言中的结构体具有一定的相似之处</span></span><br></pre></td></tr></table></figure>
 
+
+
+<p>这就定义了一个类，就好比已经有了设计图和工具,接下来就可以运用这个类创建一个对象了.。</p>
+<p>创建对象的格式为:类名 对象名 &#x3D; new 类名( );</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 类和对象;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Phonetest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建手机的对象，也就是使用类来创建一个实实在在的东西</span></span><br><span class="line">        <span class="type">Phone</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Phone</span>();</span><br><span class="line">        <span class="comment">//给手机赋值（给对象赋值）</span></span><br><span class="line">        p.brand = <span class="string">&quot;小米&quot;</span>;</span><br><span class="line">        p.price = <span class="number">1999.99</span>;</span><br><span class="line">        <span class="comment">//获取手机对象中的值</span></span><br><span class="line">        System.out.println(p.brand);</span><br><span class="line">        System.out.println(p.price);</span><br><span class="line">        <span class="comment">//调用手机中的方法</span></span><br><span class="line">        p.call();</span><br><span class="line">        p.playgame();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>细心的小伙伴们肯定发现了对象的使用其实与C语言中结构体的使用很相似，是这样的！！！但差别还是比较大的。</p>
+<p><strong>另外需要知道的是一个代码文件中可以定义多个类，但是只能一个类是由public修饰的，且public修饰的类名必须是Java代码的文件名</strong>，例如:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> 类和对象.Phone;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">asd</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建手机的对象</span></span><br><span class="line">        <span class="type">Phone</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Phone</span>();</span><br><span class="line">        <span class="comment">//给手机赋值</span></span><br><span class="line">        p.brand = <span class="string">&quot;小米&quot;</span>;</span><br><span class="line">        p.price = <span class="number">1999.99</span>;</span><br><span class="line">        <span class="comment">//获取手机对象中的值</span></span><br><span class="line">        System.out.println(p.brand);</span><br><span class="line">        System.out.println(p.price);</span><br><span class="line">        <span class="comment">//调用手机中的方法</span></span><br><span class="line">        p.call();</span><br><span class="line">        p.playgame();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">class</span> <span class="title class_">Phone</span> &#123;   <span class="comment">//创建一个类</span></span><br><span class="line">    <span class="comment">//属性</span></span><br><span class="line">    String brand;</span><br><span class="line">    <span class="type">double</span> price;</span><br><span class="line">    <span class="comment">//行为</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">call</span><span class="params">()</span>&#123;System.out.println(<span class="string">&quot;手机在打电话&quot;</span>);&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">playgame</span><span class="params">()</span>&#123;System.out.println(<span class="string">&quot;手机在打游戏&quot;</span>);&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>学习了以上知识，应该对类和对象有了初步认识。那么接下来你就可以new一个自己的对象，再也不用担心没对象了，( ヘ(￣ω￣ヘ))。</p>
+<h3 id="2-封装"><a href="#2-封装" class="headerlink" title="2.封装"></a>2.封装</h3><h5 id="1-封装的简介"><a href="#1-封装的简介" class="headerlink" title="1.封装的简介"></a>1.封装的简介</h5><p>​		封装是面向对象的三大特征之一，它在Java中的作用是毋庸置疑的。封装的实质就是将类中的状态信息隐藏在类的内部，不能够直接访问而是必须通过该类提供的特定方式来对信息进行操作和访问。</p>
+<h5 id="2-封装的步骤"><a href="#2-封装的步骤" class="headerlink" title="2.封装的步骤"></a>2.封装的步骤</h5><h6 id="1-修改属性的可见性-将类中的属性由public改为private"><a href="#1-修改属性的可见性-将类中的属性由public改为private" class="headerlink" title="1.修改属性的可见性:将类中的属性由public改为private"></a>1.修改属性的可见性:将类中的属性由public改为private</h6><h6 id="2-设置访问方法-可以手动添加set-x2F-get-方法来访问私有化变量"><a href="#2-设置访问方法-可以手动添加set-x2F-get-方法来访问私有化变量" class="headerlink" title="2.设置访问方法:可以手动添加set( )&#x2F;get( )方法来访问私有化变量"></a>2.设置访问方法:可以手动添加set( )&#x2F;get( )方法来访问私有化变量</h6><h6 id="3-在set-方法中设置限制条件"><a href="#3-在set-方法中设置限制条件" class="headerlink" title="3.在set( )方法中设置限制条件"></a>3.在set( )方法中设置限制条件</h6><p>举个例子:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Girlfriendtest</span> &#123;</span><br><span class="line">    <span class="comment">//private是一个权限修饰符，表示由private修饰的变量只能在本类中进行修改与赋值</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line">    <span class="comment">//public是都可以直接访问的</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setage</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="comment">//限制条件</span></span><br><span class="line">        <span class="keyword">if</span> (n &gt;= <span class="number">18</span> &amp;&amp; n &lt;= <span class="number">30</span>) &#123;</span><br><span class="line">            age = n;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;无效数据&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getage</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Like</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(name + <span class="string">&quot;最爱男朋友我了&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这就是将类进行封装。至于使用封装好的类的格式，与调用普通类是一样的，只是在封装好的类中存在一些私有化变量需要使用封装中的特定的方法才能够进行访问。</p>
+<h5 id="3-封装的好处"><a href="#3-封装的好处" class="headerlink" title="3.封装的好处"></a>3.封装的好处</h5><p>封装的好处当然多多 ヘ(￣ω￣ヘ)。首先能使编程边的更简单，有什么事直接找对象调用方法就行(其实在Java中已经由sun公司封装好了非常多的方法，如果有需要直接调用就行了(๑•ㅂ•)و✧ )，此还在于隐藏类的实现细节，让使用者只能通过程序员规定的方法来访问数据，可以方便地加入存取控制修饰符，来限制不合理操作，以此来增强程序的健壮性和可读性</p>
 
                 
             </div>
@@ -433,7 +444,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/04/20/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/">http://example.com/2023/04/20/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</a>
+                    <a href="http://example.com/2023/05/06/JAVA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%867/">http://example.com/2023/05/06/JAVA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%867/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -551,13 +562,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/04/20/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/">
+                <a href="/2023/05/06/JAVA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%866/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="java学习笔记2">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">java学习笔记2</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -568,7 +579,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-06
                         </span>
                         <span class="publish-author">
                             
@@ -588,13 +599,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/04/07/python/">
+                <a href="/2023/04/20/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="python">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="java学习笔记2">
                         
-                        <span class="card-title">python</span>
+                        <span class="card-title">java学习笔记2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -605,7 +616,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-20
                             </span>
                         <span class="publish-author">
                             
@@ -614,14 +625,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E4%B8%80%E6%A0%B7%E4%B8%80%E6%A0%B7%E4%B8%80%E6%A0%B7%E5%96%B5%E5%96%B5%E5%96%B5%E5%96%B5%E5%96%B5%E5%96%B5%E6%9C%A8/">
-                        <span class="chip bg-color">一样一样一样喵喵喵喵喵喵木</span>
-                    </a>
-                    
                 </div>
                 
             </div>
